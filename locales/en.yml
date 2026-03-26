@@ -1,0 +1,9 @@
+en:
+  theme_metadata:
+    description: "Adds Subscribe and New event buttons to the Upcoming Events calendar toolbar"
+
+  buttons:
+    subscribe_label: "Subscribe"
+    subscribe_title: "Manage calendar subscriptions"
+    new_event_label: "New event"
+    new_event_title: "Create a new event topic"
