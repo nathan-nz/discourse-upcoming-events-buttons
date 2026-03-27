@@ -1,6 +1,6 @@
 en:
   theme_metadata:
-    description: "Adds optional Subscribe and New event buttons to the Upcoming Events toolbar"
+    description: "Adds configurable Subscribe and New event buttons to the Upcoming Events toolbar"
 
   buttons:
     subscribe_label: "Subscribe"
