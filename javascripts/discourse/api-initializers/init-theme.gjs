@@ -4,8 +4,8 @@ import I18n from "I18n";
 export default apiInitializer((api) => {
   function iconMarkup(icon) {
     return `
-      <span class="icon ueeb-button__icon" aria-hidden="true">
-        <svg class="fa d-icon d-icon-${icon} svg-icon" width="1em" height="1em" viewBox="0 0 512 512">
+      <span class="icon" style="margin-right: 0.4em;" aria-hidden="true">
+        <svg class="fa d-icon d-icon-${icon} svg-icon" width="1em" height="1em">
           <use href="#${icon}"></use>
         </svg>
       </span>
@@ -17,10 +17,7 @@ export default apiInitializer((api) => {
     btn.type = "button";
     btn.className = `${className} fc-button fc-button-primary`;
     btn.title = title;
-    btn.innerHTML = `
-      ${iconMarkup(icon)}
-      <span class="ueeb-button__label">${label}</span>
-    `;
+    btn.innerHTML = `${iconMarkup(icon)}${label}`;
     btn.addEventListener("click", () => {
       window.location.href = href;
     });
@@ -29,16 +26,12 @@ export default apiInitializer((api) => {
 
   function addCustomButtons() {
     const toolbar = document.querySelector(".fc-allEvents-button")?.parentElement;
-    if (!toolbar) {
-      return;
-    }
+    if (!toolbar) return;
 
     const myEventsBtn = toolbar.querySelector(".fc-mineEvents-button");
-    if (!myEventsBtn) {
-      return;
-    }
+    if (!myEventsBtn) return;
 
-    if (!toolbar.querySelector(".fc-subscribe-button")) {
+    if (settings.show_subscribe_button && !toolbar.querySelector(".fc-subscribe-button")) {
       const subscribeBtn = makeButton({
         className: "fc-subscribe-button",
         title: I18n.t(themePrefix("buttons.subscribe_title")),
@@ -50,13 +43,15 @@ export default apiInitializer((api) => {
       myEventsBtn.after(subscribeBtn);
     }
 
-    if (!toolbar.querySelector(".fc-newEvent-button")) {
+    const newEventUrl = settings.new_event_url?.trim();
+
+    if (newEventUrl && !toolbar.querySelector(".fc-newEvent-button")) {
       const newEventBtn = makeButton({
         className: "fc-newEvent-button",
         title: I18n.t(themePrefix("buttons.new_event_title")),
         label: I18n.t(themePrefix("buttons.new_event_label")),
         icon: "calendar-plus",
-        href: "/w/create-event",
+        href: newEventUrl,
       });
 
       const subscribeBtn = toolbar.querySelector(".fc-subscribe-button");
@@ -78,9 +73,7 @@ export default apiInitializer((api) => {
     const router = api.container.lookup("service:router");
     const routeName = router.currentRouteName;
 
-    if (!routeName?.startsWith("discourse-post-event-upcoming-events")) {
-      return;
-    }
+    if (!routeName?.startsWith("discourse-post-event-upcoming-events")) return;
 
     scheduleButtonInsertion();
   });
