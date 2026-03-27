@@ -4,11 +4,35 @@ show_subscribe_button:
   description:
     en: "Display the Subscribe button on the Upcoming Events page."
 
+subscribe_button_label:
+  type: string
+  default: "Subscribe"
+  description:
+    en: "Label shown on the Subscribe button."
+
+subscribe_button_icon:
+  type: string
+  default: "square-check"
+  description:
+    en: "Font Awesome icon name for the Subscribe button."
+
 new_event_url:
   type: string
   default: ""
   description:
     en: "URL for the New event button. Leave blank to hide the New event button."
+
+new_event_button_label:
+  type: string
+  default: "New event"
+  description:
+    en: "Label shown on the New event button."
+
+new_event_button_icon:
+  type: string
+  default: "calendar-plus"
+  description:
+    en: "Font Awesome icon name for the New event button."
 
 hide_expired_yearly_view:
   type: bool
