@@ -3,7 +3,7 @@
   "component": true,
   "about_url": "https://github.com/nathan-nz/discourse-upcoming-new-event-button",
   "license_url": "https://github.com/nathan-nz/discourse-upcoming-new-event-button/blob/main/LICENSE",
-  "authors": "Nathan Kerr",
-  "theme_version": "0.1.0",
+  "authors": "Nathan Kershaw",
+  "theme_version": "0.2.0",
   "minimum_discourse_version": "3.3.0.beta1"
 }
