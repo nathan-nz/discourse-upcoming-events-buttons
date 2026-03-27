@@ -1,0 +1,17 @@
+show_subscribe_button:
+  type: bool
+  default: true
+  description:
+    en: "Display the Subscribe button on the Upcoming Events page."
+
+new_event_url:
+  type: string
+  default: ""
+  description:
+    en: "URL for the New event button. Leave blank to hide the New event button."
+
+hide_expired_yearly_view:
+  type: bool
+  default: true
+  description:
+    en: "Hide past days and past events in the yearly list view."
