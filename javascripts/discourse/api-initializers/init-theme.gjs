@@ -3,10 +3,16 @@ import I18n from "I18n";
 
 export default apiInitializer((api) => {
   function iconMarkup(icon) {
+    if (!icon?.trim()) {
+      return "";
+    }
+
+    const iconName = icon.trim();
+
     return `
       <span class="icon" style="margin-right: 0.4em;" aria-hidden="true">
-        <svg class="fa d-icon d-icon-${icon} svg-icon" width="1em" height="1em">
-          <use href="#${icon}"></use>
+        <svg class="fa d-icon d-icon-${iconName} svg-icon" width="1em" height="1em">
+          <use href="#${iconName}"></use>
         </svg>
       </span>
     `;
@@ -36,7 +42,7 @@ export default apiInitializer((api) => {
         className: "fc-subscribe-button",
         title: I18n.t(themePrefix("buttons.subscribe_title")),
         label: I18n.t(themePrefix("buttons.subscribe_label")),
-        icon: "square-check",
+        icon: settings.subscribe_button_icon,
         href: "/my/preferences/calendar-subscriptions",
       });
 
@@ -50,7 +56,7 @@ export default apiInitializer((api) => {
         className: "fc-newEvent-button",
         title: I18n.t(themePrefix("buttons.new_event_title")),
         label: I18n.t(themePrefix("buttons.new_event_label")),
-        icon: "calendar-plus",
+        icon: settings.new_event_button_icon,
         href: newEventUrl,
       });
 
