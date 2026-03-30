@@ -2,6 +2,13 @@ import { apiInitializer } from "discourse/lib/api";
 import I18n from "I18n";
 
 export default apiInitializer((api) => {
+  function syncYearlyViewVisibilitySetting() {
+    document.documentElement.classList.toggle(
+      "hide-expired-yearly-view",
+      !!settings.hide_expired_yearly_view
+    );
+  }
+
   function iconMarkup(icon) {
     if (!icon?.trim()) {
       return "";
@@ -76,6 +83,8 @@ export default apiInitializer((api) => {
   }
 
   api.onPageChange(() => {
+    syncYearlyViewVisibilitySetting();
+
     const router = api.container.lookup("service:router");
     const routeName = router.currentRouteName;
 
