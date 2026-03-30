@@ -1,0 +1,8 @@
+.hide-expired-yearly-view {
+  .fc-listYear-view {
+    .fc-day-past,
+    .fc-event-past {
+      display: none;
+    }
+  }
+}
