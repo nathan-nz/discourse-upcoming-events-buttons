@@ -1,7 +1,7 @@
 {
   "name": "Upcoming Events Extra Buttons",
   "component": true,
-  "about_url": "https://github.com/nathan-nz/discourse-upcoming-new-event-button",
+  "about_url": "https://meta.discourse.org/t/upcoming-events-extra-buttons/400503",
   "license_url": "https://github.com/nathan-nz/discourse-upcoming-new-event-button/blob/main/LICENSE",
   "authors": "Nathan Kershaw",
   "theme_version": "0.2.0",
