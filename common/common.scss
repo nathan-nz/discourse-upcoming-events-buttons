@@ -26,26 +26,26 @@
   order: 4;
 }
 
-@if $primary-event-buttons == "true" {
-  @mixin primary-button-styling($selector) {
-    #{$selector} {
-      background-color: var(--d-button-primary-bg-color);
-      color: var(--d-button-primary-text-color);
-    }
-
-    #{$selector}:hover,
-    #{$selector}:focus {
-      background-color: var(--d-button-primary-bg-color--hover);
-      color: var(--d-button-primary-text-color--hover);
-    }
-
-    #{$selector} .icon svg.d-icon,
-    #{$selector} svg.d-icon {
-      color: inherit;
-      transition: color 0.2s ease;
-    }
+@mixin primary-button-styling($selector) {
+  #{$selector} {
+    background-color: var(--d-button-primary-bg-color);
+    color: var(--d-button-primary-text-color);
   }
 
+  #{$selector}:hover,
+  #{$selector}:focus {
+    background-color: var(--d-button-primary-bg-color--hover);
+    color: var(--d-button-primary-text-color--hover);
+  }
+
+  #{$selector} .icon svg.d-icon,
+  #{$selector} svg.d-icon {
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+}
+
+@if $primary-event-buttons == "true" {
   // Composer toolbar dropdown "Create event"
   .toolbar-popup-menu-options ul.dropdown-menu {
     display: flex;
