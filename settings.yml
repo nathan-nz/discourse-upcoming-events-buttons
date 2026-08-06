@@ -28,6 +28,6 @@ hide_expired_yearly_view:
   description:
     en: "Hide past days and past events in the yearly list view."
 
-create_event_primary_button:
+primary_event_buttons:
   default: false
-  description: "Move \"Create event\" to the top of the composer toolbar options dropdown and style it as a primary button."
+  description: "Style event-related buttons as the primary button. Applies to the 'Create event' option in the composer toolbar dropdown and the 'New Event' button in the Upcoming Events toolbar."
